@@ -23,23 +23,41 @@ public class Main {
 		
 		/*
 		 * DateUtil.dayOfEpoch():
-		 * Returns the number of days since 1 Jan 1970 AD, 11:00:00.0 +0000 UTC
+		 * Expected: Returns the number of days since 1 Jan 1970 AD, 00:00:00.0 +0000 UTC
+		 * Actual: Returns the number of days since 1 Jan 1970 AD, 11:00:00.0 +0000 UTC
 		 */
 		
-		//Min date value
+		System.out.println("Min-");
+		System.out.println(df.format(new Date(Long.MIN_VALUE - DAY_IN_MS)));
+		System.out.println(DateUtil.dayOfEpoch(new Date(Long.MIN_VALUE - DAY_IN_MS)));
+		
+		System.out.println("\nMin");
 		System.out.println(df.format(new Date(Long.MIN_VALUE)));
 		System.out.println(DateUtil.dayOfEpoch(new Date(Long.MIN_VALUE)));
 		
-		//Max date value
-		System.out.println(df.format(new Date(Long.MAX_VALUE + 1)));
-		System.out.println(DateUtil.dayOfEpoch(new Date(Long.MAX_VALUE + 1)));
+		System.out.println("\nMin+");
+		System.out.println(df.format(new Date(Long.MIN_VALUE + DAY_IN_MS)));
+		System.out.println(DateUtil.dayOfEpoch(new Date(Long.MIN_VALUE + DAY_IN_MS)));
 		
-		//Nominal date value (0)
-		System.out.println(df.format(new Date(0l)));
+		System.out.println("\nNom");
+		System.out.println(df.format(new Date(0)));
 		System.out.println(DateUtil.dayOfEpoch(new Date(0l)));
 		
-		//One day since Epoch = ONE_DAY_IN_MS + ONE_HOUR_IN_MS
+		System.out.println("\nMax-");
+		System.out.println(df.format(new Date(Long.MAX_VALUE - DAY_IN_MS)));
+		System.out.println(DateUtil.dayOfEpoch(new Date(Long.MAX_VALUE - DAY_IN_MS)));
+		
+		System.out.println("\nMax");
+		System.out.println(df.format(new Date(Long.MAX_VALUE)));
+		System.out.println(DateUtil.dayOfEpoch(new Date(Long.MAX_VALUE)));
+		
+		System.out.println("\nMax+");
+		System.out.println(df.format(new Date(Long.MAX_VALUE + DAY_IN_MS)));
+		System.out.println(DateUtil.dayOfEpoch(new Date(Long.MAX_VALUE + DAY_IN_MS)));
+		
+		System.out.println("\nOne day since Epoch = 1 day + 11 hours");
 		System.out.println(df.format(new Date(DAY_IN_MS + (HOUR_IN_MS * 11))));
 		System.out.println(DateUtil.dayOfEpoch(new Date(DAY_IN_MS + (HOUR_IN_MS * 11))));		
+	
 	}
 }
