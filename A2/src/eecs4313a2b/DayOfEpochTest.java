@@ -126,8 +126,8 @@ public class DayOfEpochTest {
 	*/
 	@Test
 	public void maxMinusDayOfEpoch() {
-		Date maxMinuxDate = new Date(Long.MAX_VALUE - DAY_IN_MS); // 16 Aug 292278994 AD, 07:12:55.807 +0000
-		Assert.assertEquals((int) TimeUnit.MILLISECONDS.toDays(Long.MAX_VALUE - DAY_IN_MS), DateUtil.dayOfEpoch(maxMinuxDate));
+		Date maxMinusDate = new Date(Long.MAX_VALUE - DAY_IN_MS); // 16 Aug 292278994 AD, 07:12:55.807 +0000
+		Assert.assertEquals((int) TimeUnit.MILLISECONDS.toDays(Long.MAX_VALUE - DAY_IN_MS), DateUtil.dayOfEpoch(maxMinusDate));
 	}
 	
 	/**
