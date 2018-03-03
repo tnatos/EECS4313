@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 
 import net.sf.borg.common.DateUtil;
 
@@ -29,35 +30,48 @@ public class Main {
 		
 		System.out.println("Min-");
 		System.out.println(df.format(new Date(Long.MIN_VALUE - DAY_IN_MS)));
+		System.out.println((int) TimeUnit.MILLISECONDS.toDays(Long.MIN_VALUE - DAY_IN_MS));
 		System.out.println(DateUtil.dayOfEpoch(new Date(Long.MIN_VALUE - DAY_IN_MS)));
+		
 		
 		System.out.println("\nMin");
 		System.out.println(df.format(new Date(Long.MIN_VALUE)));
+		System.out.println((int) TimeUnit.MILLISECONDS.toDays(Long.MIN_VALUE));
 		System.out.println(DateUtil.dayOfEpoch(new Date(Long.MIN_VALUE)));
 		
 		System.out.println("\nMin+");
 		System.out.println(df.format(new Date(Long.MIN_VALUE + DAY_IN_MS)));
+		System.out.println((int) TimeUnit.MILLISECONDS.toDays(Long.MIN_VALUE + DAY_IN_MS));
 		System.out.println(DateUtil.dayOfEpoch(new Date(Long.MIN_VALUE + DAY_IN_MS)));
 		
 		System.out.println("\nNom");
 		System.out.println(df.format(new Date(0)));
+		System.out.println((int) TimeUnit.MILLISECONDS.toDays(0l));
 		System.out.println(DateUtil.dayOfEpoch(new Date(0l)));
 		
 		System.out.println("\nMax-");
 		System.out.println(df.format(new Date(Long.MAX_VALUE - DAY_IN_MS)));
+		System.out.println((int) TimeUnit.MILLISECONDS.toDays(Long.MAX_VALUE - DAY_IN_MS));
 		System.out.println(DateUtil.dayOfEpoch(new Date(Long.MAX_VALUE - DAY_IN_MS)));
 		
 		System.out.println("\nMax");
 		System.out.println(df.format(new Date(Long.MAX_VALUE)));
+		System.out.println((int) TimeUnit.MILLISECONDS.toDays(Long.MAX_VALUE));
 		System.out.println(DateUtil.dayOfEpoch(new Date(Long.MAX_VALUE)));
 		
 		System.out.println("\nMax+");
 		System.out.println(df.format(new Date(Long.MAX_VALUE + DAY_IN_MS)));
+		System.out.println((int) TimeUnit.MILLISECONDS.toDays(Long.MAX_VALUE + DAY_IN_MS));
 		System.out.println(DateUtil.dayOfEpoch(new Date(Long.MAX_VALUE + DAY_IN_MS)));
 		
 		System.out.println("\nOne day since Epoch = 1 day + 11 hours");
 		System.out.println(df.format(new Date(DAY_IN_MS + (HOUR_IN_MS * 11))));
+		System.out.println((int) TimeUnit.MILLISECONDS.toDays(DAY_IN_MS + (HOUR_IN_MS * 11)));
 		System.out.println(DateUtil.dayOfEpoch(new Date(DAY_IN_MS + (HOUR_IN_MS * 11))));		
 	
+		System.out.println("\n185542587100800000 milliseconds since Epoch");
+		System.out.println(df.format(new Date(185542587100800000l)));
+		System.out.println((int) TimeUnit.MILLISECONDS.toDays(185542587100800000l));
+		System.out.println(DateUtil.dayOfEpoch(new Date(185542587100800000l)));
 	}
 }
