@@ -7,6 +7,7 @@ import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
 import net.sf.borg.common.DateUtil;
+import net.sf.borg.model.Repeat;
 
 /**
  * This class is just used to play around with methods that will be used for testing.
@@ -27,6 +28,8 @@ public class Main {
 		 * Expected: Returns the number of days since 1 Jan 1970 AD, 00:00:00.0 +0000 UTC
 		 * Actual: Returns the number of days since 1 Jan 1970 AD, 11:00:00.0 +0000 UTC
 		 */
+		
+		System.out.println(DateUtil.minuteString(-2147483648));
 		
 		System.out.println("Min-");
 		System.out.println(df.format(new Date(Long.MIN_VALUE - DAY_IN_MS)));

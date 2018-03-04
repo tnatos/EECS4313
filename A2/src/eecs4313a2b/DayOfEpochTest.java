@@ -18,7 +18,7 @@ import net.sf.borg.common.DateUtil;
  * The first argument is the date in which it it calculates the number of days till or since epoch.
  *
  * @author Kevin Arindaeng
- * @version 1.2
+ * @version 1.3
  * @since 2018-03-03
  */
 
@@ -140,13 +140,13 @@ public class DayOfEpochTest {
 	* 106751991167 is equivalent to -622191233 when cast to an integer. (due to overflow)
 	* 
 	* @author  Kevin Arindaeng
-	* @version 1.2
+	* @version 1.3
 	* @since 2018-03-03
 	*/
 	@Test
 	public void maxDayOfEpoch() {
 		Date maxDate = new Date(Long.MAX_VALUE); // 17 Aug 292278994 AD, 07:12:55.807 +0000
-		Assert.assertEquals((int) TimeUnit.MILLISECONDS.toDays(Long.MAX_VALUE), DateUtil.dayOfEpoch(maxDate));
+		Assert.assertEquals("Fails due to how Epoch is defined for DateUtil.dayOfEpoch().", (int) TimeUnit.MILLISECONDS.toDays(Long.MAX_VALUE), DateUtil.dayOfEpoch(maxDate));
 	}
 	
 	/**
